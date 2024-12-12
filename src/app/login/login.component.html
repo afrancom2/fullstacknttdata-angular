@@ -1,0 +1,23 @@
+<form [formGroup]="form" class="container mt-4">
+  <div class="border p-3 rounded">
+    <p class="text-body-tertiary mb-3">Todos los campos son obligatorios</p>
+    <div class="mb-3">
+      <label for="documentType" class="form-label">Tipo de documento</label>
+      <select id="documentType" class="form-select" name="documentType" formControlName="documentType">
+        <option value="">Seleccione una opción</option>
+        <option *ngFor="let option of options" [value]="option.value">
+          {{ option.label }}
+        </option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="documentNumber" class="form-label">Número de documento</label>
+      <input type="text" id="documentNumber" class="form-control" formControlName="documentNumber" appThousandSeparator/>
+    </div>
+  </div>
+  <div class="mt-4 text-center">
+    <button type="submit" class="btn btn-primary btn-lg" [disabled]="form.invalid" (click)="onSubmit()">Buscar</button>
+  </div>
+</form>
+

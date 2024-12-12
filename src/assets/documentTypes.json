@@ -1,0 +1,4 @@
+[
+  { "value": "cedula", "label": "Cédula de ciudadanía" },
+  { "value": "pasaporte", "label": "Pasaporte" }
+]
